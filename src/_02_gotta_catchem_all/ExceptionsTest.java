@@ -33,6 +33,17 @@ class ExceptionsTest {
 	@Test
 	public void testDivideByZeroException() {
 		
+		try {
+			double a = 2.0;
+			double b = 0.0;
+			assertEquals(0.0, em.divide(a, b));
+			
+			fail("Rip it failed damn");
+		}catch(IllegalArgumentException e ){
+			e.printStackTrace();
+			assertEquals(6.0, em.divide(12, 2));
+		}
+	//	em.divide(a, b);
 	}
 	
 	//4. In the ExceptionMethods class, write a method called reverseString that takes a
@@ -43,6 +54,15 @@ class ExceptionsTest {
 	@Test
 	public void testReverseString() {
 		
+		try {
+			String a = "";
+			assertEquals("", em.reverseString(a));
+			
+			fail("yep so this failed idiot");
+		} catch(IllegalStateException e){
+			e.printStackTrace();
+			assertEquals("racecar", em.reverseString("racecar"));
+		}
 	}
 	
 	
